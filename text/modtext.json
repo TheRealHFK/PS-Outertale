@@ -1,0 +1,401 @@
+{
+    "mods": [
+        "flavored_sprites",
+        "story_mode",
+        "game_border",
+        "music_workshop",
+        "difficulty_enhance"
+    ],
+    "zh_CN": {
+        "lang": "语言",
+        "lang_intro": "选择Mod菜单的语言，会同时对所有Mod生效。\n如果选择“Auto Detect”，Mod菜单将使用游戏语言。",
+        "back": "返回主菜单",
+        "langname": "简体中文",
+        "menuname": "MOD菜单",
+        "mod_dir": "打开Mod目录",
+        "mod_dir_intro": "用系统文件管理器打开Mod目录。可以安装、更新或删除Mod。",
+        "back_mod": "返回",
+        "flavored_sprites": {
+            "name": "彩色立绘",
+            "intro": "【Mod介绍】\n“人类，快看！这是我专门为这次约会准备的，最酷的服装！！！”\n可以给战斗、约会场景中的人物立绘上色，\n不同的怪物将分配不同的颜色。"
+        },
+        "story_mode": {
+            "name": "故事模式",
+            "intro": "【Mod介绍】\n“一段属于宇宙与时空的传说即将拉开序幕...”\n移除非必要的随机遭遇战与（大部分）谜题，提升剧情沉浸感。\n适合想连贯体验主线剧情的玩家开启。",
+            "enable_story": "开启“故事模式”",
+            "enable_story_intro": "ACTION！",
+            "regular_options": [
+                "关闭",
+                "开启",
+                "自定义"
+            ],
+            "death": "死亡威胁",
+            "death_intro": "“即使是你，即使拥有足够的决心，也无法逆转死亡的命运。”\n\n存档与读档不受影响。然而，一旦死亡，存档将瞬间删除并无法复活，\n只能旁观或完全重置。",
+            "resurrect": "允许复活",
+            "resurrect_intro": "“直面过死亡的恐惧，才能体会到生的可贵。”\n\n略微降低死亡模式带来的压力与恐惧，可查看剩余复活次数。",
+            "resurrect_count": [
+                "不允许",
+                "1次",
+                "2次",
+                "3次"
+            ],
+            "random_encounter": "随机遭遇战",
+            "random_encounter_intro": "“今天，前哨站闲逛的居民格外地少呢，都去看MTT的节目了吗？”\n\n减少探索时遭遇小怪的频率。",
+            "random_options": [
+                "默认",
+                "50%",
+                "25%",
+                "移除"
+            ],
+            "kill_requirement": "杀戮数要求",
+            "kill_requirement_intro": "“你的暴行，让怪物们分外恐惧。很快，你就再也找不到一只怪物了。”\n\n清空单个区域的怪物变得更加容易，可减少屠杀刷怪时间。",
+            "kill_options": [
+                "默认",
+                "50%",
+                "25%",
+                "0"
+            ],
+            "puzzle_reduce": "减少谜题",
+            "puzzle_reduce_intro": "“哈喽！听说你...想让我助你一臂之力？可我根本没有手臂哎！“\n\nTwinkly将自动帮助玩家完成大部分谜题。",
+            "time_limit": "限时谜题时间",
+            "time_limit_intro": "“面对挑战，你集中注意力，主观时间流速减慢！”\n\n某些限时谜题的时间限制将会延长至1.5倍。",
+            "time_options": [
+                "默认",
+                "延长"
+            ]
+        },
+        "game_border": {
+            "name": "精美边框",
+            "intro": "【Mod介绍】\n“我正通过终端屏幕观察你的一举一动...”\n可以提供简单、固定、动态等多种游戏边框，其中动态边框会根据游戏进程自动调节。"
+        },
+        "music_workshop": {
+            "name": "音乐工坊",
+            "intro": "【Mod介绍】\n“孩子，我为你买了一把新的吉他。希望你能喜欢。”\n开启后，可以自定义许多场景的背景音乐与战斗BGM\n可以调整音乐风格，还可以添加独立的未使用音乐。"
+        },
+        "difficulty_enhance": {
+            "name": "难度优化",
+            "intro": "【Mod介绍】\n“嘿，小子。想成为骷髅宝宝吗？这可是你的必经之路。”\n可以在此处降低(或提升)游戏难度，避免由于BOSS战难度过高或过低而卡关。\n除了难度调节，还有“旧伤难愈”，“心理素质”，“因果报应”\n等多种新增功能与玩法。"
+        }
+    },
+    "zh_TW": {
+        "lang": "語言",
+        "lang_intro": "選擇Mod選單的語言，會同時對所有Mod生效。\n如果選擇“Auto Detect”，Mod選單將使用遊戲語言。",
+        "back": "返回主選單",
+        "langname": "繁體中文",
+        "menuname": "MOD選單",
+        "mod_dir": "打開Mod目錄",
+        "mod_dir_intro": "用系統檔案管理器打開Mod目錄。可以安裝、更新或刪除Mod。",
+        "back_mod": "返回",
+        "flavored_sprites": {
+            "name": "彩色立繪",
+            "intro": ""
+        },
+        "story_mode": {
+            "name": "故事模式",
+            "intro": "【Mod介紹】\n“一段屬於宇宙與時空的傳說即將拉開序幕...”\n移除非必要的隨機遭遇戰與（大部分）謎題，提升劇情沉浸感。\n適合想連貫體驗主線劇情的玩家開啟。",
+            "enable_story": "開啟“故事模式”",
+            "enable_story_intro": "ACTION！",
+            "regular_options": [
+                "關閉",
+                "開啟",
+                "自定義"
+            ],
+            "death": "死亡威脅",
+            "death_intro": "“即使是你，即使擁有足夠的決心，也無法逆轉死亡的命運。”\n\n存檔與讀檔不受影響。然而，一旦死亡，存檔將瞬間刪除並無法復活，\n只能旁觀或完全重置。",
+            "resurrect": "允許復活",
+            "resurrect_intro": "“直面過死亡的恐懼，才能體會到生的可貴。”\n\n略微降低死亡模式帶來的壓力與恐懼，可查看剩餘復活次數。",
+            "resurrect_count": [
+                "不允許",
+                "1次",
+                "2次",
+                "3次"
+            ],
+            "random_encounter": "隨機遭遇戰",
+            "random_encounter_intro": "“今天，前哨站閒逛的居民格外地少呢，都去看MTT的節目了嗎？”\n\n減少探索時遭遇小怪的頻率。",
+            "random_options": [
+                "默認",
+                "50%",
+                "25%",
+                "移除"
+            ],
+            "kill_requirement": "殺戮數要求",
+            "kill_requirement_intro": "“你的暴行，讓怪物們分外恐懼。很快，你就再也找不到一隻怪物了。”\n\n清空單個區域的怪物變得更加容易，可減少屠殺刷怪時間。",
+            "kill_options": [
+                "默認",
+                "50%",
+                "25%",
+                "0"
+            ],
+            "puzzle_reduce": "減少謎題",
+            "puzzle_reduce_intro": "“哈囉！聽說你...想讓我助你一臂之力？可我根本沒有手臂哎！“\n\nTwinkly將自動幫助玩家完成大部分謎題。",
+            "time_limit": "限時謎題時間",
+            "time_limit_intro": "“面對挑戰，你集中注意力，主觀時間流速減慢！”\n\n某些限時謎題的時間限制將會延長至1.5倍。",
+            "time_options": [
+                "默認",
+                "延長"
+            ]
+        },
+        "game_border": {
+            "name": "精美邊框",
+            "intro": ""
+        },
+        "music_workshop": {
+            "name": "音樂工坊",
+            "intro": ""
+        },
+        "difficulty_enhance": {
+            "name": "難度優化",
+            "intro": ""
+        }
+    },
+    "en_US": {
+        "lang": "Language",
+        "lang_intro": "Select the language for the Mod menu. This will also apply to all Mods.\nIf you choose 'Auto Detect', the Mod menu will use the game language.",
+        "back": "Return to Main Menu",
+        "langname": "English",
+        "menuname": "MOD MENU",
+        "mod_dir": "Open Mod Directory",
+        "mod_dir_intro": "Open the Mod directory using the system file manager. \nYou can install, update, or delete Mods.",
+        "back_mod": "Return",
+        "flavored_sprites": {
+            "name": "Colored Battle Characters",
+            "intro": ""
+        },
+        "story_mode": {
+            "name": "Story Mode",
+            "intro": "[Mod Introduction]\n'A tale of the universe and space is about to begin...' \nRemove non-essential random encounters and (most) puzzles to enhance the story immersion.\nRecommended for players who want a cohesive main storyline experience.",
+            "enable_story": "Enable \"Story Mode\"",
+            "enable_story_intro": "ACTION!",
+            "regular_options": [
+                "OFF",
+                "ON",
+                "CUSTOM"
+            ],
+            "death": "Permanent Death",
+            "death_intro": "'Even with all your determination, you can't cheat death.'\n\nSaving and loading are unaffected. \nBut once you're dead, the SAVE file is instantly deleted and you can't revive.",
+            "resurrect": "Allow Resurrection",
+            "resurrect_intro": "'Facing death's fear makes life precious.'\n\nReduces the pressure and fear of permanent death mode a bit \nand shows the remaining resurrection count.",
+            "resurrect_count": [
+                "Not Allowed",
+                "1 Time",
+                "2 Times",
+                "3 Times"
+            ],
+            "random_encounter": "Random Encounters",
+            "random_encounter_intro": "'The outpost is unusually quiet today, is everyone watching MTT's show?'\n\nReduces the frequency of random monster encounters during exploration.",
+            "random_options": [
+                "Default",
+                "50%",
+                "25%",
+                "Removed"
+            ],
+            "kill_requirement": "Kill Requirement",
+            "kill_requirement_intro": "'Your cruel deeds have terrified the monsters. Soon, there won't be any left to find.'\n\nMaking it easier to clear out monsters in a single area, reducing grind time.",
+            "kill_options": [
+                "Default",
+                "50%",
+                "25%",
+                "0"
+            ],
+            "puzzle_reduce": "Puzzles Solved",
+            "puzzle_reduce_intro": "'Howdy! Heard you need a hand? Too bad I don't have any!'\n\nTwinkly will assist in solving most puzzles, ensuring a smoother journey.",
+            "time_limit": "Timed Puzzle Time",
+            "time_limit_intro": "'When faced with a challenge, you focus intensely, making time feel slower.'\n\nExtends the time limit for certain timed puzzles to 1.5 times.",
+            "time_options": [
+                "Default",
+                "Extended"
+            ]
+        },
+        "game_border": {
+            "name": "Exquisite Borders",
+            "intro": ""
+        },
+        "music_workshop": {
+            "name": "Music Workshop",
+            "intro": ""
+        },
+        "difficulty_enhance": {
+            "name": "Difficulty Enhancement",
+            "intro": ""
+        }
+    },
+    "de_DE": {
+        "lang": "Sprache",
+        "back": "Zurück zum Spielmenü",
+        "langname": "Deutsch",
+        "menuname": "MOD MENÜ",
+        "mod_dir": "Mod-Verzeichnis öffnen",
+        "flavored_sprites": {
+            "name": "Bunte Sprites",
+            "intro": ""
+        },
+        "story_mode": {
+            "name": "Geschichtenmodus",
+            "intro": ""
+        },
+        "game_border": {
+            "name": "Exquisite Grenze",
+            "intro": ""
+        },
+        "music_workshop": {
+            "name": "Musikwerkstatt",
+            "intro": ""
+        },
+        "difficulty_enhance": {
+            "name": "Schwierigkeitsgrad Verbesserung",
+            "intro": ""
+        }
+    },
+    "es_ES": {
+        "lang": "Idioma",
+        "back": "Volver al menú del juego",
+        "langname": "Español",
+        "menuname": "Menú de Mods",
+        "mod_dir": "Abrir carpeta de mods",
+        "flavored_sprites": {
+            "name": "Sprites Coloridos",
+            "intro": ""
+        },
+        "story_mode": {
+            "name": "Modo Historia",
+            "intro": ""
+        },
+        "game_border": {
+            "name": "Borde Exquisito",
+            "intro": ""
+        },
+        "music_workshop": {
+            "name": "Taller de Música",
+            "intro": ""
+        },
+        "difficulty_enhance": {
+            "name": "Mejora de Dificultad",
+            "intro": ""
+        }
+    },
+    "fr_FR": {
+        "lang": "Langue",
+        "back": "Retour au menu du jeu",
+        "langname": "Français",
+        "menuname": "Menu des Mods",
+        "mod_dir": "Ouvrir le dossier de mods",
+        "flavored_sprites": {
+            "name": "Sprites Colorés",
+            "intro": ""
+        },
+        "story_mode": {
+            "name": "Mode Histoire",
+            "intro": ""
+        },
+        "game_border": {
+            "name": "Bord Exquis",
+            "intro": ""
+        },
+        "music_workshop": {
+            "name": "Atelier de Musique",
+            "intro": ""
+        },
+        "difficulty_enhance": {
+            "name": "Amélioration de la Difficulté",
+            "intro": ""
+        }
+    },
+    "ja_JP": {
+        "lang": "げんご",
+        "lang_intro": "MODメニューのげんごを　せんたくしてください。\nこれにより　すべてのMODにも　てきようされます。\n「じどう」を　せんたくすると　MODメニューは　ゲームのげんごを　使用します。",
+        "back": "メインメニューに　もどる",
+        "langname": "にほんご",
+        "menuname": "MODメニュー",
+        "mod_dir": "MODリストを　あかく",
+        "mod_dir_intro": "ファイルマネージャーを　使用して　MODリストを　あきます。\nMODのインストール、こうしん、さくじょができます。",
+        "back_mod": "もどる",
+        "flavored_sprites": {
+            "name": "カラーイラスト",
+            "intro": ""
+        },
+        "story_mode": {
+            "name": "ストーリーモード",
+            "intro": "【MODしょうかい】「うちゅうと　じくうのてんせつが　まもなく　かいまくする…」\nストーリーへの　ぼつにゅうかんを　たかめるために　ふひつような　ランダムバトルと　\n（ほとんどの）パズルを　さくじょします。\nメインストーリーの　とぎれない　メインストーリーを　たいけんしたい方に　おすすめです。",
+            "enable_story": "ストーリーモードを",
+            "enable_story_intro": "アクション！",
+            "regular_options": [
+                "むこう",
+                "ゆうこう",
+                "カスタム"
+            ],
+            "death": "パーマデス",
+            "death_intro": "「たとえ　おまえであっても　ケツイがあっても　しのうんめいを\n　ぎゃくてんすることは　できません。」\n「セーブ」と　「ロード」には　えいきょうしませんが　いちどしぬと　\nセーブファイルが　そくざに　さくじょされ　ふっかつできません。\nぼうかんするか　かんぜんに　リセットするしか　ありません。",
+            "resurrect": "ふっかつを　きょか",
+            "resurrect_intro": "「しのきょうふに　ちょくめんして　はじめて　いのちの　とうとさが　わかります。」\nパーマデスモードの　プレッシャーと　きょうふを　けいげんし、\nのこりの　ふっかつ回数を　ひょうじします。",
+            "resurrect_count": [
+                "きょかしない",
+                "1回",
+                "2回",
+                "3回"
+            ],
+            "random_encounter": "ランダムバトル",
+            "random_encounter_intro": "「きょうの　ぜんしょうきちは　いつもより　しずかな。\nみんな　METAほうそう　みにいきましたか？」\nたんさくちゅうの　ランダムバトルの　ひんどを　へらします。",
+            "random_options": [
+                "デフォルト",
+                "50%",
+                "25%",
+                "さくじょ"
+            ],
+            "kill_requirement": "さつりくりょうのきじゅん",
+            "kill_requirement_intro": "「おまえの　ぼうこうによって　モンスターたちは　きょうふに　おちいった。\nもうすぐに　モンスターは　みえなく　なりますよ。」\nひとつのエリアの　モンスターを　みなごろしに　することが　\nかんたんになります　じかんの　せつやくになります。",
+            "kill_options": [
+                "デフォルト",
+                "50%",
+                "25%",
+                "0"
+            ],
+            "puzzle_reduce": "パズルが　かいけつ",
+            "puzzle_reduce_intro": "「やあ！てだすけが　ひつようって　きいたけど　\nざんねんながら　てが　ないんですよ！」\nTwinklyが　ほとんどの　パズルを　かいけつします。",
+            "time_limit": "パズルの　じかんせいげん",
+            "time_limit_intro": "「ちょうせんに　しゅうちゅうすると　じかんがおそく　かんじられます。」\nとくていの　パズルの　じかんせいげんを　1.5倍に　えんちょうされます。",
+            "time_options": [
+                "デフォルト",
+                "えんちょう"
+            ]
+        },
+        "game_border": {
+            "name": "せいちな　がくぶち",
+            "intro": ""
+        },
+        "music_workshop": {
+            "name": "ミュージック　ワークショップ",
+            "intro": ""
+        },
+        "difficulty_enhance": {
+            "name": "なんいど　さいてきか",
+            "intro": ""
+        }
+    },
+    "tr_TR": {
+        "lang": "Dil",
+        "back": "Ana menüye dön",
+        "langname": "Türkçe",
+        "menuname": "Mod Menüsü",
+        "mod_dir": "Mod Klasörünü Aç",
+        "flavored_sprites": {
+            "name": "Renkli Spritelar",
+            "intro": ""
+        },
+        "story_mode": {
+            "name": "Hikaye Modu",
+            "intro": ""
+        },
+        "game_border": {
+            "name": "Zarif Sınır",
+            "intro": ""
+        },
+        "music_workshop": {
+            "name": "Müzik Atölyesi",
+            "intro": ""
+        },
+        "difficulty_enhance": {
+            "name": "Zorluk Artırma",
+            "intro": ""
+        }
+    }
+}

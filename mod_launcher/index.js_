@@ -1,0 +1,242 @@
+// Mod启动器：添加Mod菜单，选项等
+// 作者：WS3917 from PSOT汉化组
+//import { SAVE } from 'mods:../../code/api';
+const response = await fetch("mods:text/modtext.json");
+if (!response.ok) {
+    throw new Error("Mod text file not found!");
+}
+const modName = 'modSettings';
+const modMenuname = modName;
+const modText = await response.json();
+const modFolders = modText['mods'];
+const LanguageList = ['auto'];
+const LanguageNameList = ['Auto Detect'];
+
+for (const lang in modText) {
+    if (lang === "mods") continue;
+    if (modText.hasOwnProperty(lang)) {
+        LanguageList.push(lang);
+        LanguageNameList.push(modText[lang].langname);
+    }
+}
+
+flagString.$modLanguage = info('auto');
+// 语言切换的相关函数, LP = languageProperties
+const LP = {};
+
+LP.getLanguage = () => {
+    const footerText = SAVE.flag.s.$option_language;
+    for (let i = 1; i < LanguageList.length; i++) {
+        if (footerText === LanguageList[i]) {
+            return LanguageList[i];
+        }
+    }
+    return 'en_US';
+};
+LP.getCurrentLanguageName = () => {
+    const languageIndex = LanguageList.indexOf(SAVE.flag.s.$modLanguage);
+    if (languageIndex !== -1) {
+        return LanguageNameList[languageIndex];
+    } else {
+        return null;
+    }
+};
+LP.getTextForCurrentLanguage = (key, mod = '') => {
+    var fetchLanguage = SAVE.flag.s.$modLanguage;
+    if (fetchLanguage === 'auto') fetchLanguage = LP.getLanguage();
+    if (mod) return modText[fetchLanguage][mod][key], modText[fetchLanguage][mod][key]
+    else return modText[fetchLanguage][key] || modText['en_US'][key];
+};
+// Getting the introduction of each option
+LP.getModIntro = (grid) => {
+    for (const selection of grid) {
+        if (menuFinder(modMenuname, selection)) {
+            if (modFolders.includes(selection)) return LP.getTextForCurrentLanguage(selection)['intro'] || "";
+            else return LP.getTextForCurrentLanguage(selection + "_intro", '') || "";
+        }
+    }
+    return "";
+};
+
+LP.get_subModIntro = (grid, modmenuname, modname) => {
+    for (const selection of grid) {
+        if (menuFinder(modmenuname, selection)) {
+            if (selection.includes('back')) return ""
+            else return LP.getTextForCurrentLanguage(modname)[selection + "_intro"] || "";
+        }
+    }
+    return "";
+}
+
+export { modText, modFolders, LanguageList, LanguageNameList, LP };
+
+/** @type {import('../../code/index').OutertaleMod} */
+export default async function (mod, api) {
+    // 导入API
+    const {
+        CosmosNavigator,
+        CosmosObject,
+        menuText,
+        menuFinder,
+        frontEnder,
+        atlas,
+        SAVE,
+        CosmosUtils,
+        backend,
+        game,
+        CosmosTextUtils
+    } = api;
+
+    // Mod 菜单项结构
+
+    const frontEndSettings = atlas.navigators.of('frontEndSettings');
+    atlas.navigators.register({
+        [modMenuname]: new CosmosNavigator({
+            // 菜单项
+            grid: () => [
+                [
+                    'back',
+                    'mod_dir',  // 添加mod文件夹
+                    ...modFolders,  // 其他Mod
+                    'lang'
+                ]
+            ],
+            // 菜单项的处理逻辑
+            next(self) {
+                const selection = self.selection();
+                // 选择语言
+                switch (selection) {
+                    case 'lang': // 语言切换逻辑
+                        const currentIndex = LanguageList.indexOf(SAVE.flag.s.$modLanguage);
+                        const nextIndex = (currentIndex + 1) % LanguageList.length;
+                        SAVE.flag.s.$modLanguage = LanguageList[nextIndex];
+                        // 更新语言时重新渲染菜单文本
+                        self.objects[1].objects.forEach(obj => {
+                            if (typeof obj.text === 'function') obj.text = obj.text();
+                        });
+                        var titleobj = self.objects[1].objects[0];
+                        titleobj.on('tick', function () {
+                            this.position.x = 180 - 8 * CosmosTextUtils.cjk_length(this.content);
+                        });
+                        break;
+                    case 'mod_dir':
+                        backend?.exec('mods');
+                        break;
+                    case 'back':
+                        return 'frontEndSettings';
+                    default:
+                        if (modFolders.includes(selection) && modFolders[1].includes(selection)) {
+                            // spacey: using return would do nothing here as it is in async code. Use atlas.switch to manually trigger same effect
+                            // spacey: also disable input while the mod loads
+                            game.input = false;
+                            import(`mods:${selection}/index.js`).then(modSubmenu => {
+                                game.input = true;
+                                atlas.switch(selection + '_menu');
+                            }).catch((error) => {
+                                game.input = true;
+                            })
+                        };
+                        break;
+                }
+            },
+            prev() {
+                return 'frontEndSettings';
+            },
+            // 文本显示
+            objects: [
+                frontEnder.createBackground(Number.MAX_SAFE_INTEGER),
+                new CosmosObject({
+                    fontName: 'DeterminationSans',
+                    fontSize: 16,
+                    priority: Number.MAX_SAFE_INTEGER,
+                    objects: [
+                        // 标题
+                        menuText(
+                            360 - 16 * CosmosTextUtils.cjk_length(LP.getTextForCurrentLanguage('menuname')),
+                            36 - 4,
+                            () => LP.getTextForCurrentLanguage('menuname'),
+                            {
+                                fontName: 'DeterminationSans',
+                                fontSize: 32
+                            }
+                        ),
+                        // 固定菜单项：返回选项
+                        menuText(
+                            40,
+                            84,
+                            () => `§fill:${menuFinder(modMenuname, 'back') ? '#ff0' : '#fff'}§${LP.getTextForCurrentLanguage('back')}`
+                        ),
+                        menuText(
+                            40,
+                            84 + 41,
+                            () => `§fill:${menuFinder(modMenuname, 'mod_dir') ? '#ff0' : '#fff'}§${LP.getTextForCurrentLanguage('mod_dir')}`
+                        ),
+                        //动态菜单项
+                        ...modFolders.map((folderName, index) => {
+                            return menuText(
+                                40,
+                                // 向下调整菜单项位置
+                                84 + 41 * (index + 2),
+                                // 根据当前语言调整Mod菜单项的显示名称
+                                () => `§fill:${menuFinder(modMenuname, folderName) ? '#ff0' : '#fff'}§${LP.getTextForCurrentLanguage(folderName)['name']}`
+                            );
+                        }),
+                        // 语言设置
+                        menuText(
+                            40,
+                            84 + 41 * (modFolders.length + 2),
+                            () => `§fill:${menuFinder(modMenuname, 'lang') ? '#ff0' : '#fff'}§${LP.getTextForCurrentLanguage('lang')}`
+                        ),
+                        menuText(
+                            400,
+                            84 + 41 * (modFolders.length + 2),
+                            () => `§fill:${menuFinder(modMenuname, 'lang') ? '#ff0' : '#fff'}§${LP.getCurrentLanguageName()}`
+                        ),
+                        menuText(
+                            40,
+                            84 + 41 * (modFolders.length + 3),
+                            () => `§fill:#777§${LP.getModIntro([
+                                'back',
+                                'mod_dir',  // 添加mod文件夹
+                                ...modFolders,  // 其他Mod
+                                'lang'
+                            ])}`,
+                            {
+                                fontName: 'DeterminationSans',
+                                fontSize: 8
+                            }
+                        )
+                    ]
+                })
+            ]
+        }).on('from', function () {
+            this.position = { x: 0, y: 0 };
+            atlas.attach(renderer, 'menu', modMenuname);
+        }).on('to', function () {
+            atlas.detach(renderer, 'menu', modMenuname);
+        })
+    });
+
+    // 后续处理：把“Mod设置”添加到游戏设置选项中
+    // 添加处理逻辑
+    const OriginalNext = frontEndSettings.next;
+    frontEndSettings.next = function (self) {
+        const selection = self.selection();
+        if (selection === 'mods') {
+            atlas.switch(modMenuname)
+        } else {
+            return OriginalNext.call(this, self);   // 回调函数
+        }
+    };
+    // 添加显示文本
+    frontEndSettings.objects[1].objects.pop()
+    frontEndSettings.objects[1].objects.push(
+        // 菜单项
+        menuText(
+            40,
+            84 + 41 * 8,
+            () => `§fill:${menuFinder('frontEndSettings', 'mods') ? '#ff0' : '#fff'}§${LP.getTextForCurrentLanguage('menuname')}`,
+            { alpha: backend === null ? 0 : 1 }
+        ));
+    CosmosUtils.status("Mod Launcher Load Successfully.", { color: "#ff0" });
+}
